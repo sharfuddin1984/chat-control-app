@@ -9,6 +9,11 @@ export class ChatControlComponent {
  @Output() messageEmitter = new EventEmitter<string>();
 
   message: string = '';
+  isActive: boolean = false;
+
+  onTyping() {
+    this.isActive = this.message.trim().length > 0;
+  }
 
   sendMessage() {
   if (this.message.trim()) {
@@ -18,5 +23,6 @@ export class ChatControlComponent {
 
   public clear() {
     this.message = '';
+    this.isActive = false;
   }
 }

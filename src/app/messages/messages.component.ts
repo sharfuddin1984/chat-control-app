@@ -9,7 +9,7 @@ import { Message } from '../models/message.model'; // Adjust the import path as 
 export class MessagesComponent {
   @Input() messages: Message[] | undefined;
 
-get orderedMessages(): Message[] {
+  get orderedMessages(): Message[] {
     return [...(this.messages ?? [])].reverse();
   }
 }

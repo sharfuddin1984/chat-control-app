@@ -1,8 +1,13 @@
 <div class="row">
   <div class="col">
-    <textarea [(ngModel)]="message" (keydown.enter)="sendMessage()" placeholder="Type your message"></textarea>
+    <textarea 
+      [(ngModel)]="message" 
+      (keydown.enter)="sendMessage()" 
+      (input)="onTyping()"
+      placeholder="Type your message">
+    </textarea>
   </div>
   <div class="col-auto">
-    <button class="btn btn-primary" (click)="sendMessage()">Send</button>
+    <button class="btn btn-primary" (click)="sendMessage()" [disabled]="!isActive">Send</button>
   </div>
 </div>
