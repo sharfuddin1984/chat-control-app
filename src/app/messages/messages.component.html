@@ -1,0 +1,6 @@
+<div class="messages">
+  <p *ngFor="let item of orderedMessages">
+    {{ item.author }}:    {{ item.message }}
+    {{ item.timestamp | date: 'shortTime' }}
+  </p>
+</div>
